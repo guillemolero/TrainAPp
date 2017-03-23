@@ -6,3 +6,16 @@
  * and open the template in the editor.
  */
 
+?>
+
+<html>
+    <head>
+        <title>TrainApp</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <?php 
+            include "include/login.php";
+        ?>
+    </body>
+</html>
