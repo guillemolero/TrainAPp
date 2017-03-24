@@ -8,7 +8,7 @@
     if (isset($_POST['sign'])) //asigna a variables los post y comprueba que no están vacíos
         {   
             $user = $_POST['user'];
-            $password = $_POST['password'];
+            $password = md5($_POST['password']); //la contraseña la almacenamos ya en MD5, asi nos ahorramos tener que transformarla para trabajar con ella
             if (empty($user) || empty($password))
                 {
                     if(empty($user))
@@ -22,11 +22,14 @@
                 }
             else //si ambos valores NO son nulos, conecta con la base de datos y hace el insert de usuario y contraseña con md5
                 {
-                    $pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', 'q1w2e3r4t5y6');
+                    //$pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
+                    $pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); //este es el mio, asi no tenemos que estar borrando y poniendo
                     
-                    $sql = "INSERT INTO usuarios (nombre, password) VALUES ('$user', '".md5($password)."')";
-                    $pdo->query($sql);
-                    unset($conexion);
+                    //en el pdo se usan consultas preparadas (marioly me quitó puntos por esto un puñado de veces)
+                    $sql = $pdo->prepare("INSERT INTO usuarios (nombre, password) VALUES (?, ?)"); //las interrogaciones son los parametros
+                    $sql->bindParam(1, $user); //los parámetros se asignan por orden (hay otra forma pero me parece más simple esta)
+                    $sql->bindParam(2, $password);
+                    $sql->execute();
                     echo "<p>Introducción de datos correcta.</p>";
                     echo "<p>Ir a <a href='index.php'>Iniciar sesión</a></p>"; // para volver index con ya nuestro usuario creado
                     ?>
