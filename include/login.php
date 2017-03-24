@@ -14,8 +14,7 @@
         </tr>
         <!-- he introducido esta parte en un span para darle un formato para que sea la tipica linea pequeña debajo del botón para nuevos usuarios -->
         <tr>
-            <td colspan="2"><span class="noUser">¿Aún no estás registrado? ¡Regístrate!</span></td>
+            <td colspan="2"><span class="noUser">¿Aún no estás registrado? <a href="signup.php">¡Regístrate!</a><!--Te lleva al registro, que está al mismo nivel que el index.php--></span></td>
         </tr>
-        
     </table>
 </form>
