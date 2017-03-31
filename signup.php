@@ -2,6 +2,7 @@
     <head>
         <title>TrainApp</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 <?php
@@ -22,8 +23,8 @@
                 }
             else //si ambos valores NO son nulos, conecta con la base de datos y hace el insert de usuario y contraseña con md5
                 {
-                    //$pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
-                    $pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); //este es el mio, asi no tenemos que estar borrando y poniendo
+                    $pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
+                    //$pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); este es el mio, asi no tenemos que estar borrando y poniendo
                     
                     //en el pdo se usan consultas preparadas (marioly me quitó puntos por esto un puñado de veces)
                     $sql = $pdo->prepare("INSERT INTO usuarios (nombre, password) VALUES (?, ?)"); //las interrogaciones son los parametros
@@ -35,6 +36,7 @@
                     ?>
                     <!--Imprimo el formulario por si quiero crear otro usuario nada más crear el nuevo-->
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            <div id="elemento4">
             <table>
                 <tr>
                     <h1>Crea un usuario</h1>
@@ -51,6 +53,7 @@
                     <td colspan="2"><input type="submit" name="sign" value="Sign"></td>
                 </tr>
             </table>
+                </div>
         </form><?php
                 }
         }
@@ -59,7 +62,8 @@
         //Aquí entra si todavía no ha habido post (el formulario sin procesamiento de datos)
         {?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-    <table>
+                <div id="elemento4">
+        <table>
         <tr>
             <h1>Crea un usuario</h1>
         </tr>
@@ -75,6 +79,7 @@
             <td colspan="2"><input type="submit" name="sign" value="Sign"></td>
         </tr>
     </table>
+                </div>
 </form>
     </body>
         <?php

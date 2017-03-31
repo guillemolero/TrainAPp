@@ -23,13 +23,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#">Inicio</a></li>
-                    <li><a href="#">TrainApp</a></li>
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#elemento1">TrainApp</a></li>
+                    <li><a href="#elemento2">Nosotros</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
             </nav>
-            
+            </header>
             <div class="login">
                 <?php
         session_start();
@@ -45,17 +45,36 @@
                 {
                     if(empty($user))
                         {
-                            echo "Introduzca el nombre de su usuario.<br>";
+                            $nouser = "Introduzca el nombre de su usuario.<br>";
+                        }
+                    else
+                        {
+                            $nouser = "";
                         }
                     if(empty($password))
                         {
-                            echo "Introduzca su contraseña.";
+                            $nopass = "Introduzca su contraseña.";
                         }
-                    include "include/login.php";
+                    else
+                        {
+                            $nopass= "";
+                        }
+                    ?> <div class="row">
+                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="marginlog"><?php
+            include "include/login.php";
+            ?><div id="error"><?php
+            echo $nouser;
+            echo $nopass;
+            ?>
+            </div>
+                </section>
+               </div>
+                
+                <?php
                 }
             else //en caso de que no sean vacíos, conecto con la base de datos y hago la consulta para comprobar si existe el usuario
                 {
-                    //$pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
+//                    $pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
                     $pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', '');
                     
                     $sql = $pdo->prepare("SELECT nombre FROM usuarios WHERE nombre = ? AND password = ?");
@@ -69,15 +88,33 @@
                             
                             $_SESSION['user'] = $user;
                             //header("Location: paginaprincipal.php"); Aquí nos llevará a la página principal de la app
+                            ?><section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="elemento3"><?php
                             echo "Sesión iniciada correctamente<br>";
                             echo "Hola, ".$user; //esto solo era para comprobar que me cogiera la variable bien
                             echo "<p><a href='cerrar.php'>Cerrar Sesión</a></p>";
+                            
+                            ?></section>
+                              
+                           
+                                
+                                
+                                <?php
                         }
                     else //si con el fetch no encuentra resultados, entra en el else
                         {
                             $error = "Usuario y/o contraseña incorrectos."; 
-                            include "include/login.php";
-                            echo $error;
+                            ?> <div class="row">
+                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="marginlog"><?php
+            include "include/login.php";
+            ?><div id="error"><?php
+            echo $error;
+            ?>
+            </div>
+                </section>
+               </div>
+                
+                <?php
+                            
                         }
      
                 }
@@ -85,20 +122,34 @@
     
     else
         {
+            ?> <div class="row">
+                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="marginlog"><?php
             include "include/login.php";
+            ?>
+                </section>
+               </div>
+                
+                <?php
         }
         ?>
             </div>
             
-        </header>
-        <section>
-            
+        <div class="row" id="elementos">
+        <section class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="elemento1">
+            <h3>Qué es TrainApp</h3>
+             <p>Esta aplicación surge de la idea de ayudar a los deportistas a conseguir resultados en sus entrenamientos
+             en el gimnasio.</p>
+             <img src="css/imgs/logo2.png"/>
         </section>
-        <section>
-            
+        <section class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="elemento2">
+                <h3>Nosotros</h3>
+                <p>La aplicación es desarrollada por Guillermo Molero y por José Francisco Esparza, estudiantes de
+                Diseño Web.</p>
+                <img src="css/imgs/ejs.png"/>
         </section>
+        </div>
         <footer>
-            
+            <p>Copyright © 2017. Web Apps Design. All rights reserved.</p>
         </footer>
         
         
