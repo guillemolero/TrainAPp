@@ -4,11 +4,13 @@ html, body {
 }
 body
 {
-    background-image: url("imgs/fondo2.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
+   background: url("imgs/fondo2.png") 100% 100% no-repeat;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   padding-right: 15px;
 }
-.login {
+/*.login {
     width: 25%;
     height: 25%;
     margin-left: 0px;
@@ -16,24 +18,27 @@ body
     justify-content: center;
     align-content: center;
     align-items: center;
-}
+}*/
 #marginlog
 {
-    margin-left: 500px;
-    margin-top: 500px;
+    //margin-left: 500px;
+    margin-top: 6%;
 }
 /*
     Esto tenemos que adaptarlo a los tamaños, porque a 1080 está al pelo, pero más pequeño no
 */
 /* Esto es el estilo del cubo que rodea el formulario del login*/
 #contenedorLogin {
-    max-width: 100%;
-    padding: 50px; /* OJO CON LOS TAMAÑOS PUESTOS EN PX, QUE LUEGO HAY QUE ADAPTARLOS */
+    max-width: 50%;
+    padding-left: 5%;
+    padding-right: 0%;
+    padding-top: 5%;
+    padding-bottom: 2%; /* OJO CON LOS TAMAÑOS PUESTOS EN PX, QUE LUEGO HAY QUE ADAPTARLOS */
     background-color: #088FFE;
     border: 1px solid white;
     border-radius: 40px;
     opacity: 0.8;
-    margin: 0 auto;
+    margin-left: 50%;
 }
 
 #contenedorLogin:hover
@@ -46,11 +51,11 @@ body
 
 #elementos
 {
-    margin-top: 300px;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
+    margin-right: 15px !important;
     
 }
 /*Aqui va el color del texto de debajo del botón entrar*/
@@ -163,6 +168,8 @@ footer {
     width: 100%;
     background-color: #333333;
     color: whitesmoke;
+    position: absolute;
+    bottom: 0;
    }
 
 #elemento4
