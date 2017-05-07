@@ -23,11 +23,11 @@
                 }
             else //si ambos valores NO son nulos, conecta con la base de datos y hace el insert de usuario y contraseña con md5
                 {
-                    $pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
-                    //$pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', ''); este es el mio, asi no tenemos que estar borrando y poniendo
+                    //$pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
+                    $pdo = new PDO('mysql:host=localhost;dbname=trainapp', 'root', ''); //este es el mio, asi no tenemos que estar borrando y poniendo
                     
                     //en el pdo se usan consultas preparadas (marioly me quitó puntos por esto un puñado de veces)
-                    $sql = $pdo->prepare("INSERT INTO usuarios (nombre, password) VALUES (?, ?)"); //las interrogaciones son los parametros
+                    $sql = $pdo->prepare("INSERT INTO usuarios (user, password) VALUES (?, ?)"); //las interrogaciones son los parametros
                     $sql->bindParam(1, $user); //los parámetros se asignan por orden (hay otra forma pero me parece más simple esta)
                     $sql->bindParam(2, $password);
                     $sql->execute();

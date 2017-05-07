@@ -8,12 +8,7 @@
 <script src='lib/jquery.min.js'></script>
 <script src='lib/jquery-ui.min.js'></script>
 <script src='resources/fullcalendar.min.js'></script>
-<?php 
-
-    if($_POST){
-        ?>
-    
-        <script>
+<script>
 
 	$(document).ready(function() {
 
@@ -37,54 +32,32 @@
 			});
 
 		});
-                
-                
 
 
 		/* initialize the calendar
 		-----------------------------------------------------------------*/
 
-		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			editable: true,
+			droppable: true, // this allows things to be dropped onto the calendar
+			drop: function() {
+				// is the "remove after drop" checkbox checked?
+				if ($('#drop-remove').is(':checked')) {
+					// if so, remove the element from the "Draggable Events" list
+					$(this).remove();
+				}
+			}
+		});
 
 
 	});
 
-</script><?php
-    }
-?>
-<script>
-            $(document).ready(function() { 
-            
-            $('#calendar').fullCalendar({
-                            header: {
-                                    left: 'prev,next today',
-                                    center: 'title',
-                                    right: 'month,agendaWeek,agendaDay'
-                            },
-                            editable: true,
-                            droppable: true, // this allows things to be dropped onto the calendar
-                            drop: function() {
-                                    // is the "remove after drop" checkbox checked?
-                                    if ($('#drop-remove').is(':checked')) {
-                                            // if so, remove the element from the "Draggable Events" list
-                                            $(this).remove();
-                                    }
-                            },
-                            editable: true,
-                            eventLimit: true, // allow "more" link when too many events
-                            events: [
-                                    { <?php ?>
-                                            title: 'All Day Event',
-                                            start: '2017-04-01'
-                                    },
-
-                            ]
-                            
-                    });
-    });
-                    
 </script>
-
 <style>
 
 	body {
@@ -139,40 +112,27 @@
 </head>
 <body>
     <div id='creacion'>
-        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-            <select name="zona">
+        <form>
+            <select id="zona">
                 <option value="Piernas">Piernas</option>
                 <option value="Pecho">Pecho</option>
             </select>
-            <select name="ejercicio">
+            <select id="ejercicio">
                 <option value="Cinta">Cinta</option>
                 <option value="Press banca">Press banca</option>
             </select>
-            <input type="submit" value="add">
+            <input type="submit" value="añadir">
         </form>
     </div>
 	<div id='wrap'>
 
 		<div id='external-events'>
 			<h4>Draggable Events</h4>
-                        
-                        <?php 
-                            
-                            
-                            if($_POST){
-                                $zona = $_POST['zona'];
-                                $ejercicios= $_POST['ejercicio'];
-                                
-                                echo "<div class='fc-event'>.$zona.-.$ejercicios.</div>";
-                            } else {
-                                echo "<div>No hay ejercicios</div>";
-                            }
-                        ?>
-<!--			<div class='fc-event'>My Event 1</div>
+			<div class='fc-event'>My Event 1</div>
 			<div class='fc-event'>My Event 2</div>
 			<div class='fc-event'>My Event 3</div>
 			<div class='fc-event'>My Event 4</div>
-			<div class='fc-event'>My Event 5</div>-->
+			<div class='fc-event'>My Event 5</div>
 			<p>
 				<input type='checkbox' id='drop-remove' />
 				<label for='drop-remove'>remove after drop</label>

@@ -21,7 +21,7 @@ body
 }*/
 #marginlog
 {
-    //margin-left: 500px;
+    /*margin-left: 500px;*/
     margin-top: 6%;
 }
 /*
@@ -202,3 +202,25 @@ footer {
         font-weight:bolder;
         margin-bottom: 20px;
     }
+    
+    @media screen and (max-width: 991px)
+{
+    #contenedorLogin
+        {
+            margin-left: 25% !important;
+        }
+        
+    #elementos  
+        {
+            margin-left: 2%;
+            margin-right: 2% !important;
+        }
+}
+
+@media screen and (max-width: 767px)
+{
+    #contenedorLogin
+        {
+            margin-top: 2%;
+        }
+}

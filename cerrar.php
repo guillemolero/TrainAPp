@@ -6,8 +6,8 @@
     <body>
         <?php
                     session_start();
-                      $pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
-//                    $pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', '');
+                      //$pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
+                    $pdo = new PDO('mysql:host=localhost;dbname=trainapp', 'root', '');
 //                    $error = $pdo->errorCode();
                     
                     
