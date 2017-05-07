@@ -10,6 +10,8 @@
 <script src='calendar/resources/fullcalendar.min.js'></script>
 <?php 
 
+    include "functions/database.php";
+
     if($_POST){
         ?>
     
@@ -138,41 +140,21 @@
 </style>
 </head>
 <body>
-    <div id='creacion'>
-        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-            <select name="zona">
-                <option value="Piernas">Piernas</option>
-                <option value="Pecho">Pecho</option>
-            </select>
-            <select name="ejercicio">
-                <option value="Cinta">Cinta</option>
-                <option value="Press banca">Press banca</option>
-            </select>
-            <input type="submit" value="add">
-        </form>
-    </div>
 	<div id='wrap'>
 
 		<div id='external-events'>
-			<h4>Draggable Events</h4>
+			<h4>Ejercicios</h4>
                         
                         <?php 
                             
                             
-                            if($_POST){
-                                $zona = $_POST['zona'];
-                                $ejercicios= $_POST['ejercicio'];
-                                
-                                echo "<div class='fc-event'> $zona - $ejercicios </div>";
-                            } else {
-                                echo "<div>No hay ejercicios</div>";
-                            }
+                        loadSelect("HOMBROS");
+                        loadSelect("PECHO");
+                        loadSelect("ESPALDA");
+                        loadSelect("BRAZOS");
+                        loadSelect("PIERNAS");
+                        
                         ?>
-<!--			<div class='fc-event'>My Event 1</div>
-			<div class='fc-event'>My Event 2</div>
-			<div class='fc-event'>My Event 3</div>
-			<div class='fc-event'>My Event 4</div>
-			<div class='fc-event'>My Event 5</div>-->
 			<p>
 				<input type='checkbox' id='drop-remove' />
 				<label for='drop-remove'>remove after drop</label>

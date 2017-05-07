@@ -34,7 +34,10 @@ function loadSelect($zona){
     $sql->execute();
     
     $filas = $sql->fetchAll(PDO::FETCH_COLUMN);
-    
-    return $filas;
+
+    for($i=0; $i<count($filas); $i++)
+{
+    echo "<div class='fc-event'> $filas[$i] </div>";
+}
     
 }
