@@ -62,12 +62,14 @@
                             },
                             editable: true,
                             droppable: true, // this allows things to be dropped onto the calendar
-                            drop: function() {
+                            drop: function(date) {
                                     // is the "remove after drop" checkbox checked?
                                     if ($('#drop-remove').is(':checked')) {
                                             // if so, remove the element from the "Draggable Events" list
                                             $(this).remove();
                                     }
+                                    //recoje el item al soltarlo y le añade como ID la fecha en segundos desde 1970 (epoch)
+                                    $('.fc-title').attr('id',date);
                             },
                             editable: true,
                             eventLimit: true, // allow "more" link when too many events
@@ -140,18 +142,40 @@
 	<div id='wrap'>
 
 		<div id='external-events'>
-			<h4>Ejercicios</h4>
-                        
-                        <?php 
-                            
-                            
-                        loadSelect("HOMBROS");
-                        loadSelect("PECHO");
-                        loadSelect("ESPALDA");
-                        loadSelect("BRAZOS");
-                        loadSelect("PIERNAS");
-                        
-                        ?>
+			<h2>Ejercicios</h2>
+                        <div id ="acordeon">
+                            <div id = "apartado1">
+                                <h3>Hombros</h3>
+                                <div class="contenido">
+                                <?php loadSelect("HOMBROS"); ?>
+                                </div>
+                            </div>
+                            <div id = "apartado2">
+                                <h3>Pecho</h3>
+                                <div class="contenido">
+                                <?php loadSelect("PECHO"); ?>
+                                </div>
+                            </div>
+                            <div id = "apartado3">
+                                <h3>Espalda</h3>
+                                <div class="contenido">
+                                <?php loadSelect("ESPALDA"); ?>
+                                </div>
+                            </div>
+                            <div id = "apartado4">
+                                <h3>Brazos</h3>
+                                <div class="contenido">
+                                <?php loadSelect("BRAZOS"); ?>
+                                </div>
+                            </div>
+                            <div id = "apartado5">
+                                <h3>Piernas</h3>
+                                <div class="contenido">
+                                <?php loadSelect("PIERNAS"); ?>
+                                </div>
+                            </div>
+                        </div>
+                       
 			<p>
 				<input type='checkbox' id='drop-remove' />
 				<label for='drop-remove'>remove after drop</label>
@@ -167,41 +191,13 @@
 
 	$(document).ready(function() {
 
-		$('#acordeon').children().children("h1").click(function() {
+		$('#acordeon').children().children("h3").click(function() {
 
-			$(this).siblings(".contenido").slideToogle();
+			$(this).siblings(".contenido").slideToggle();
 			console.log($(this).siblings(".contenido"));
 			});			
 		});
 </script>
-<div id ="acordeon">
-    <div id = "apartado1">
-        <h1>Apartado 1</h1>
-        <div class="contenido">
-        <div>Prueba</div>
-        <div>Prueba</div>
-        <div>Prueba</div>
-        <div>Prueba</div>
-        </div>
-    </div>
-    <div id = "apartado2">
-        <h1>Apartado 2</h1>
-        <div class="contenido">
-        <div>Prueba</div>
-        <div>Prueba</div>
-        <div>Prueba</div>
-        <div>Prueba</div>
-        </div>
-    </div>
-    <div id = "apartado3">
-        <h1>Apartado 3</h1>
-        <div class="contenido">
-        <div>Prueba</div>
-        <div>Prueba</div>
-        <div>Prueba</div>
-        <div>Prueba</div>
-        </div>
-    </div>
-</div>
+
 </body>
 </html>
