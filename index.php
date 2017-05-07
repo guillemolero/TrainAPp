@@ -3,6 +3,8 @@
         <title>TrainApp</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="javascript" href="js/bootstrap.js">
+        <link rel="javascript" href="js/bootstrap.min.js">
     </head>
     <body> 
         <header>
@@ -60,7 +62,7 @@
                             $nopass= "";
                         }
                     ?> <div class="row">
-                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="marginlog"><?php
+                <section class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="marginlog"><?php
             include "include/login.php";
             ?><div id="error"><?php
             echo $nouser;
@@ -88,7 +90,7 @@
                             
                             $_SESSION['user'] = $user;
                             //header("Location: paginaprincipal.php"); Aquí nos llevará a la página principal de la app
-                            ?><section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="elemento3"><?php
+                            ?><section class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="elemento3"><?php
                             echo "Sesión iniciada correctamente<br>";
                             echo "Hola, ".$user; //esto solo era para comprobar que me cogiera la variable bien
                             echo "<p><a href='cerrar.php'>Cerrar Sesión</a></p>";
@@ -104,7 +106,7 @@
                         {
                             $error = "Usuario y/o contraseña incorrectos."; 
                             ?> <div class="row">
-                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="marginlog"><?php
+                <section class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="marginlog"><?php
             include "include/login.php";
             ?><div id="error"><?php
             echo $error;
@@ -123,7 +125,7 @@
     else
         {
             ?> <div class="row">
-                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="marginlog"><?php
+                <section class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="marginlog"><?php
             include "include/login.php";
             ?>
                 </section>
@@ -149,7 +151,7 @@
         </section>
         </div>
         <footer>
-            <p>Copyright © 2017. Web Apps Design. All rights reserved.</p>
+            Copyright © 2017. Web Apps Design. All rights reserved.
         </footer>
         
         
