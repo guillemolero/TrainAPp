@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<link href='resources/fullcalendar.min.css' rel='stylesheet' />
-<link href='resources/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-<script src='lib/moment.min.js'></script>
-<script src='lib/jquery.min.js'></script>
-<script src='lib/jquery-ui.min.js'></script>
-<script src='resources/fullcalendar.min.js'></script>
+<link href='calendar/resources/fullcalendar.min.css' rel='stylesheet' />
+<link href='calendar/resources/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='calendar/lib/moment.min.js'></script>
+<script src='calendar/lib/jquery.min.js'></script>
+<script src='calendar/lib/jquery-ui.min.js'></script>
+<script src='calendar/resources/fullcalendar.min.js'></script>
 <script>
 
 	$(document).ready(function() {
