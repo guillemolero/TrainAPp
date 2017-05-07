@@ -163,5 +163,45 @@
 		<div style='clear:both'></div>
 
 	</div>
+    <script>
+
+	$(document).ready(function() {
+
+		$('#acordeon').children().children("h1").click(function() {
+
+			$(this).siblings(".contenido").slideToogle();
+			console.log($(this).siblings(".contenido"));
+			});			
+		});
+</script>
+<div id ="acordeon">
+    <div id = "apartado1">
+        <h1>Apartado 1</h1>
+        <div class="contenido">
+        <div>Prueba</div>
+        <div>Prueba</div>
+        <div>Prueba</div>
+        <div>Prueba</div>
+        </div>
+    </div>
+    <div id = "apartado2">
+        <h1>Apartado 2</h1>
+        <div class="contenido">
+        <div>Prueba</div>
+        <div>Prueba</div>
+        <div>Prueba</div>
+        <div>Prueba</div>
+        </div>
+    </div>
+    <div id = "apartado3">
+        <h1>Apartado 3</h1>
+        <div class="contenido">
+        <div>Prueba</div>
+        <div>Prueba</div>
+        <div>Prueba</div>
+        <div>Prueba</div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
