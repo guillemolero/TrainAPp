@@ -12,8 +12,7 @@
 
     include "functions/database.php";
 
-    if($_POST){
-        ?>
+    ?>
     
         <script>
 
@@ -51,9 +50,7 @@
 
 	});
 
-</script><?php
-    }
-?>
+</script>
 <script>
             $(document).ready(function() { 
             
