@@ -62,7 +62,20 @@
                             },
                             editable: true,
                             droppable: true, // this allows things to be dropped onto the calendar
-                            drop: function(date) {
+                            drop: function(){
+                                
+                                    var ejercicio = $('tbody').children('tr').children();
+                                    var fechaejercicio = $('thead').children('tr').children('td').data('date');
+                                    for (var i = 0; i < $('tbody').children('tr').length; i++)
+                                        {
+                                            if (ejercicio.hasClass('.fc-event-container''))
+                                                {
+                                                    $('tbody').children('tr').children('.fc-event-container').children('.fc-day-grid-event').children('.fc-content')[i].attr("id", fechaejercicio[i]);
+                                                }
+                                        }
+                            },
+                            eventDrop: function()
+                                {
                                     // is the "remove after drop" checkbox checked?
                                     if ($('#drop-remove').is(':checked')) {
                                             // if so, remove the element from the "Draggable Events" list
@@ -70,7 +83,7 @@
                                     }
                                     //recoje el item al soltarlo y le añade como ID la fecha en segundos desde 1970 (epoch)
                                     $('.fc-title').attr('id',date);
-                            },
+                                },
                             editable: true,
                             eventLimit: true, // allow "more" link when too many events
                             events: [
