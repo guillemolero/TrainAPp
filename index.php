@@ -77,9 +77,9 @@
             else //en caso de que no sean vacíos, conecto con la base de datos y hago la consulta para comprobar si existe el usuario
                 {
 //                    $pdo = new PDO('mysql:host=localhost;dbname=Proyecto', 'root', 'q1w2e3r4t5y6');
-                    $pdo = new PDO('mysql:host=localhost;dbname=proyecto', 'root', '');
+                    $bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', '');
                     
-                    $sql = $pdo->prepare("SELECT nombre FROM usuarios WHERE nombre = ? AND password = ?");
+                    $sql = $bdd->prepare("SELECT user FROM usuarios WHERE user = ? AND password = ?");
                     $sql->bindParam(1, $user);
                     $sql->bindParam(2, $password);
                     $sql->execute();
@@ -89,7 +89,7 @@
                         {
                             
                             $_SESSION['user'] = $user;
-                            //header("Location: paginaprincipal.php"); Aquí nos llevará a la página principal de la app
+                            header("Location: calendar.php");
                             ?><section class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="elemento3"><?php
                             echo "Sesión iniciada correctamente<br>";
                             echo "Hola, ".$user; //esto solo era para comprobar que me cogiera la variable bien
