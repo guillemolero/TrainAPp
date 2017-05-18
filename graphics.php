@@ -6,21 +6,59 @@
         <title>Gráfico de muestra</title>
     </head>
     <body>
+        <?php
+            require_once('calendar/bdd.php');
+            require_once('calendar/loadSelect.php');
+            require_once('calendar/loadHistorial.php');
+            $bdd = connectDB();
+            session_start();
+            $user = $_SESSION['user'];
+            
+            $sql = "SELECT peso FROM historial WHERE user='$user' AND title='PRESS MILITAR'";
+            $resultado = $bdd->query($sql);
+            $a = 0;
+            while($registro = $resultado->fetch())
+                {
+                    $peso[$a] = $registro['peso'];
+                    $a++;
+                }
+            $contadorveces = 0;
+            for ($i = 0; $i < count($peso); $i++)
+                {
+                    $contadorveces++;
+                }
+                
+            $sql2 = "SELECT ZONA FROM ejercicios WHERE NOMBRE = 'PRESS MILITAR'";
+            $resultado2 = $bdd->query($sql2);
+            $zona = '';
+            while ($registro2 = $resultado2->fetch())
+            {
+                $zona = $registro2[0];
+            }
+               
+        ?>
         <div id = "container" style="min-width: 540px; height:590px; margin: 0 auto"></div>
         <script>
+            var nombre = '<?php echo $user; ?>';
+            var zona = '<?php echo $zona; ?>';
+            
+            /*for(var i = 0; i < 999999; i++)
+                {
+                    var peso[i] = '<?php echo $peso[i]?>';
+                }*/
+            
             Highcharts.chart('container', {
     chart: {
         type: 'line'
     },
     title: {
-        text: 'Progresión en ejercicios del usuario'
+        text: 'Progresión del ejercicio de '+nombre+''
     },
     subtitle: {
-        text: 'Zona: pectoral'
+        text: 'Zona: '+zona+''
     },
     xAxis: {
-        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+        categories: []
     },
     yAxis: {
         title: {
@@ -36,18 +74,10 @@
         }
     },
     series: [{
-        name: 'Apertura Mancuernas',
-        data: [5.0, 7.5, 8.5, 9, 11, 12.5, 12.5, 15, 16, 16, 18, 18.5]
-    }, {
-        name: 'Press Banca plano',
-        data: [8, 10, 11.5, 11.75, 11.75, 13, 13.5, 14, 15, 16.5, 18, 20]
-    }, {
-        name: 'Press Banca inclinado',
-        data: [6, 8.5, 9, 9, 10.75, 11, 12, 12.5, 14, 14, 15, 16]
-    },{
-        name: 'Pull Over',
-        data: [7.5, 7.5, 10, 12.5, 15, 15, 17.5, 17.5, 20, 20, 20, 22.5]
-    },]
+        name: 'PRESS MILITAR',
+        data: [5.0, 7.5, 8.5, 9, 11, 12.5, 12.5, 15, 16, 16, 18, 18.5] //La cosa es puto meter aquí todos los pesos todas las veces
+                                                                       // que se haya hecho el puto ejercicio
+    }]
 });
         </script>
     </body>
