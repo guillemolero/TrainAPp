@@ -50,9 +50,6 @@
     <div class="y-value value-10">10</div>
     <div class="y-value value-0">0</div>
     <div class="chart">
-        <div class="bar blue" style="height: calc(28em*0.32)"></div>
-        <div class="bar purple" style="height: calc(28em*0.56)"></div>
-        <div class="bar green" style="height: calc(28em*0.12)"></div>
     </div>
 </div>
     <h2 class="info">Registro de <span id="ejercicio">ejercicio</span> de <span id="usuario"><?php echo $user ?></span></h2>
@@ -102,7 +99,7 @@
             $resultado3 = $bdd->query($sql3);
             while($registro3 = $resultado3->fetch())
                 {
-                    echo '<div class="bar blue" style="height: calc(28em*('+$registro3['peso']+'*0.1))"></div>';
+                    echo ('<div class="bar blue" style="height: calc(28em*('+$registro3['peso']+'*0.1))"></div>');
                 }
         ?>
     </div>
