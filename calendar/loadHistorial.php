@@ -2,9 +2,6 @@
 
 require_once('calendar/bdd.php');
 
-
-
-
 function loadHistorial($user){
     
     $bdd = connectDB();

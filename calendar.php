@@ -293,12 +293,12 @@ $events = $req->fetchAll();
 					$('#ModalEdit').modal('show');
 				});
 			},
-			eventDrop: function(event, delta, revertFunc) { // si changement de position
+			eventDrop: function(event, delta, revertFunc) { // si cambia de posicion
 
 				edit(event);
 
 			},
-			eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
+			eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si se alarga
 
 				edit(event);
 

@@ -99,7 +99,9 @@
             $resultado3 = $bdd->query($sql3);
             while($registro3 = $resultado3->fetch())
                 {
-                    echo ('<div class="bar blue" style="height: calc(28em*('+$registro3['peso']+'*0.1))"></div>');
+                    // calc(28em*('.$registro3['peso'].'*0.1))
+                    $valor = $registro3['peso'] * 0.28;
+                    echo '<div class="bar blue" style="height: '.$valor.'em;"></div>';
                 }
         ?>
     </div>
