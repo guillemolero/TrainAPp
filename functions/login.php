@@ -1,4 +1,6 @@
 <?php
+$nouser = "";
+$nopass = "";
 
 if(isset($_SESSION['user']))
     {
@@ -8,7 +10,7 @@ if(isset($_SESSION['user']))
 if (isset($_POST['login']))
     {
         $user = $_POST['user'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
         if (empty($user) || empty($password))
             {
                 if (empty($user) && empty($password))
@@ -36,7 +38,7 @@ if (isset($_POST['login']))
                 //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', 'q1w2e3r4t5y6');
                 $sql = $bdd->prepare("SELECT nombre FROM usuarios WHERE user = ? AND password = ?");
                 $sql->bindParam(1, $user);
-                $sql->bindParam(2, $password);
+                $sql->bindParam(2, md5($password));
                 $sql->execute();
 
                 $filas = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -49,8 +51,4 @@ if (isset($_POST['login']))
                     }
             }      
     }
-else
-    {
-        $nouser = "";
-        $nopass = "";
-    }
+

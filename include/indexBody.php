@@ -77,5 +77,5 @@
 				</footer>
 
 		</div>
-    <?php include 'indexScripts.php'; ?>
+    <?php include 'indexScript.php'; ?>
 </body>

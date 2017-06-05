@@ -1,5 +1,4 @@
 <body class="loading">
-    <?php include 'calendarModal.php'; ?>
     <div id="wrapper">
             <div id="bg"></div>
             <div id="overlay"></div>
@@ -8,11 +7,11 @@
                     <!-- Header -->
                             <header id="header">
                                     <h1><?php echo $nombre; ?></h1>
-                                    <?php include 'globalMenu.php'; ?>
+                                    <?php include 'globalMenu.php' ?>
 
                                     <div class="container">
                                         <center>
-                                            <div id="calendar">
+                                            <div id="graficos">
 
                                             </div>
                                         </center>
@@ -29,7 +28,7 @@
     </div>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     
-    <?php include 'calendarScript.php'; ?>
+    <?php include 'graphicsScript.php'; ?>
 
 
 </body>
