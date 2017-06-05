@@ -1,0 +1,226 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body
+{
+   background: url("imgs/fondo2.png") 100% 100% no-repeat;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   padding-right: 15px;
+}
+/*.login {
+    width: 25%;
+    height: 25%;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}*/
+#marginlog
+{
+    /*margin-left: 500px;*/
+    margin-top: 6%;
+}
+/*
+    Esto tenemos que adaptarlo a los tamaños, porque a 1080 está al pelo, pero más pequeño no
+*/
+/* Esto es el estilo del cubo que rodea el formulario del login*/
+#contenedorLogin {
+    max-width: 50%;
+    padding-left: 5%;
+    padding-right: 0%;
+    padding-top: 5%;
+    padding-bottom: 2%; /* OJO CON LOS TAMAÑOS PUESTOS EN PX, QUE LUEGO HAY QUE ADAPTARLOS */
+    background-color: #088FFE;
+    border: 1px solid white;
+    border-radius: 40px;
+    opacity: 0.8;
+    margin-left: 50%;
+}
+
+#contenedorLogin:hover
+{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    opacity: 1;
+}
+
+#elementos
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-right: 15px !important;
+    
+}
+/*Aqui va el color del texto de debajo del botón entrar*/
+.noUser {
+    color:white;
+}
+/*Aquí va el color de la barra de navegación*/
+.navbar {
+    background-color: #088FFE;
+}
+/* esto es el color de las letras del menu*/
+li a {
+    color: white !important;
+}
+/* esto es el color del "TrainApp" "*/
+.navbar-brand {
+    color: white !important; /* me gustaría no usar important, pero bueno, ya lo miraremos*/
+}
+
+/*Los que no funcionan sin important tenemos que mirarlos urgente eh jajaja*/
+.active a{
+    background-color: #32A4FF !important;
+}
+
+.navbar-right li a:hover {
+  background-color: #32A4FF !important; }
+
+#elemento1 {
+    margin-right: 50px;
+    background-color: #088FFE;
+    border: 1px solid white;
+    border-radius: 20px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+   }
+
+#elemento1:hover
+{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    opacity: 1;
+}   
+   
+#elemento1 img {
+ 
+    width: 50%;
+    height: 30%;
+}
+#elemento2
+{
+    margin-left: 50px;
+    background-color: #088FFE;
+    border: 1px solid white;
+    border-radius: 20px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#elemento2:hover
+{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    opacity: 1;
+}
+
+#elemento3
+{  
+    margin-left: 1000px;
+    margin-top: 500px;
+    padding-left: 75px; /* OJO CON LOS TAMAÑOS PUESTOS EN PX, QUE LUEGO HAY QUE ADAPTARLOS */
+    padding-right: 75px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #088FFE;
+    border: 1px solid white;
+    border-radius: 20px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#elemento3:hover
+{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    opacity: 1;
+}
+
+#elemento2 img {
+    width: 50%;
+    height: 30%; 
+   }
+
+footer {
+    height: 20px;
+    width: 100%;
+    background-color: #333333;
+    color: whitesmoke;
+    position: absolute;
+    bottom: 0;
+   }
+
+#elemento4
+{  
+    
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #088FFE;
+    border: 1px solid white;
+    border-radius: 20px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#elemento4:hover
+{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    opacity: 1;
+}
+   
+#error
+    {
+        color:red;
+        font-weight:bolder;
+        margin-bottom: 20px;
+    }
+    
+    @media screen and (max-width: 991px)
+{
+    #contenedorLogin
+        {
+            margin-left: 25% !important;
+        }
+        
+    #elementos  
+        {
+            margin-left: 2%;
+            margin-right: 2% !important;
+        }
+}
+
+@media screen and (max-width: 767px)
+{
+    #contenedorLogin
+        {
+            margin-top: 2%;
+        }
+}
