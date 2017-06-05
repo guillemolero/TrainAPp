@@ -34,8 +34,8 @@ if (isset($_POST['login']))
             }
         else 
             {
-                $bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', '');
-                //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', 'q1w2e3r4t5y6');
+                //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', '');
+                $bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', 'q1w2e3r4t5y6');
                 $sql = $bdd->prepare("SELECT nombre FROM usuarios WHERE user = ? AND password = ?");
                 $sql->bindParam(1, $user);
                 $sql->bindParam(2, md5($password));
