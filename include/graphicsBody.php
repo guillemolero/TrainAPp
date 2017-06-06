@@ -12,7 +12,7 @@
                                     <div class="container">
                                         <center>
                                             <div id="graficos">
-
+                                                <?php include 'include/graphicsContent.php'; ?>
                                             </div>
                                         </center>
                                     </div>

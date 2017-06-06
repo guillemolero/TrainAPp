@@ -1,14 +1,11 @@
 <head>
-    <title>Calendario de <?php echo $user; ?></title>
+    <title>Gráficos de <?php echo $user; ?></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap Core CSS -->
     <link href="calendar/css/bootstrap.min.css" rel="stylesheet">
-    <!-- usuarios.php -->
     <link rel="stylesheet" href="innerAssets/css/main.css" />
-    <!-- FullCalendar -->
-    <link href='calendar/css/fullcalendar.css' rel='stylesheet' />
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="innerAssets/css/graficos.css">
+    <link rel="javascript" href="js/bootstrap.min.js">
     <style>
         body {
             padding-top: 70px;
