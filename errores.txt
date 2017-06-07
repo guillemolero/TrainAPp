@@ -1,0 +1,1 @@
+No funcionan las variables $nouser y $nopass que sirven para meter dentro de la pagina principal que no se han introducido el usuario o la contraseña al intentar iniciar sesión, pero si pones el usuario y la contraseña bien entra en calendar pero no lee la variable de sesión
