@@ -40,8 +40,8 @@ if (isset($_POST['login']))
             }
         else 
             {
-                $bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', 'q1w2e3r4t5y6');
-                //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', ''); //este es el mio, asi no tenemos que estar borrando y poniendo
+                //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', 'q1w2e3r4t5y6');
+                $bdd = new PDO('mysql:host=localhost;dbname=id1903252_trainapp;charset=utf8', 'id1903252_guillemolero', 'guillegmg8'); //este es el mio, asi no tenemos que estar borrando y poniendo
 
                 //en el pdo se usan consultas preparadas (marioly me quitó puntos por esto un puñado de veces)
                 $sql = $bdd->prepare("INSERT INTO usuarios (nombre, password, user) VALUES (?, ?, ?)"); //las interrogaciones son los parametros

@@ -55,7 +55,7 @@
         <div id ="npeso">
             Peso levantado en kgs
         </div>
-<div class="chart-container">
+<div class="chart-container" style="max-height: 400px">
     <div class="y-value value-100">100</div>
     <div class="y-value value-90">90</div>
     <div class="y-value value-80">80</div>
@@ -67,7 +67,7 @@
     <div class="y-value value-20">20</div>
     <div class="y-value value-10">10</div>
     <div class="y-value value-0">0</div>
-    <div class="chart">
+    <div class="chart" style="max-height: 400px">
     </div>
 </div>
     <h2 class="info">Registro de <span id="ejercicio">ejercicio</span> de <span id="usuario"><?php echo $user ?></span></h2>
@@ -125,7 +125,7 @@
         <div id ="npeso">
             Peso levantado en kgs
         </div>
-<div class="chart-container">
+<div class="chart-container" style="max-height: 400px">
     <div class="y-value value-100">100</div>
     <div class="y-value value-90">90</div>
     <div class="y-value value-80">80</div>
@@ -137,7 +137,7 @@
     <div class="y-value value-20">20</div>
     <div class="y-value value-10">10</div>
     <div class="y-value value-0">0</div>
-    <div class="chart">
+    <div class="chart" style="max-height: 400px">
         <?php //Empieza la chefranada
             if ($selected_val2 == "Desde siempre") //consulta sin intervalo de tiempo si se selecciona desde siempre
                 {
@@ -229,8 +229,9 @@
                     echo '<div class="pesograf">'.$peso.'</div>';
                 }
         ?>
-    </div>
-    <h2 class="info">Registro de <span id="ejercicio"><?php echo $selected_val ?></span> de <span id="usuario"><?php echo $user ?></span>:
+        <h2 class="info">Registro de <span id="ejercicio"><?php echo $selected_val ?></span> de <span id="usuario"><?php echo $user ?></span>:
         <span id='intervalo'><?php echo $selected_val2 ?></span></h2>
+    </div>
+    
 <?php    }
     ?>
