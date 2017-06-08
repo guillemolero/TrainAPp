@@ -2,7 +2,7 @@
 <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <form class="form-horizontal" method="POST" action="functions/addEvent.php">
+        <form class="form-horizontal" method="POST" action="functions/addEvent.php" onsubmit="return checkForm(this);">
 
           <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -48,7 +48,7 @@
                           <input type="text" name="start" class="form-control" id="start" readonly>
                         </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style="display: none;">
                         <label for="end" class="col-sm-2 control-label">Acaba</label>
                         <div class="col-sm-10">
                           <input type="text" name="end" class="form-control" id="end" readonly>
@@ -57,7 +57,7 @@
           </div>
           <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button name="addGuardar" type="submit" class="btn btn-primary">Guardar</button>
 <!--                <button id="botonAdd" onclick="add(event);" class="btn btn-primary">Guardar</button>-->
           </div>
         </form>
@@ -95,19 +95,19 @@
                   <div class="form-group">
                       <label for="peso" class="col-sm-2 control-label">Peso</label>
                       <div class="col-sm-10">
-                          <input type="number" name="peso" step="0.5" class="form-control" id="title" placeholder="Peso">
+                          <input type="number" name="peso" step="0.5" min="0" max="100" class="form-control" placeholder="Peso">
                         </div>
                   </div>
                   <div class="form-group">
                       <label for="repeticiones" class="col-sm-2 control-label">Repeticiones</label>
                       <div class="col-sm-10">
-                          <input type="number" name="repeticiones" class="form-control" id="title" placeholder="Repeticiones">
+                          <input type="number" name="repeticiones" min="0" max="1000" class="form-control" placeholder="Repeticiones">
                         </div>
                   </div>
                   <div class="form-group">
                       <label for="series" class="col-sm-2 control-label">Series</label>
                       <div class="col-sm-10">
-                          <input type="number" name="series" class="form-control" id="title" placeholder="Series">
+                          <input type="number" name="series" min="0" max="50" class="form-control" placeholder="Series">
                         </div>
                   </div>
                     <div class="form-group"> 

@@ -2,6 +2,7 @@
 $nouser = "";
 $nopass = "";
 $noalias = "";
+require_once('bdd.php');
 
 if (isset($_POST['login']))
     {
@@ -40,16 +41,34 @@ if (isset($_POST['login']))
             }
         else 
             {
+                $bdd = connectDB();
                 //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', 'q1w2e3r4t5y6');
-                $bdd = new PDO('mysql:host=localhost;dbname=id1903252_trainapp;charset=utf8', 'id1903252_guillemolero', 'guillegmg8'); //este es el mio, asi no tenemos que estar borrando y poniendo
+                //$bdd = new PDO('mysql:host=localhost;dbname=trainapp', 'root', ''); //este es el mio, asi no tenemos que estar borrando y poniendo
 
                 //en el pdo se usan consultas preparadas (marioly me quitó puntos por esto un puñado de veces)
-                $sql = $bdd->prepare("INSERT INTO usuarios (nombre, password, user) VALUES (?, ?, ?)"); //las interrogaciones son los parametros
-                $sql->bindParam(1, $user); //los parámetros se asignan por orden (hay otra forma pero me parece más simple esta)
-                $sql->bindParam(2, $password);
-                $sql->bindParam(3, $alias);
+                $sql = $bdd->prepare("SELECT nombre, password FROM usuarios WHERE user = ?");
+                $sql->bindParam(1, $user);
                 $sql->execute();
-                header("Location: index.php");
+
+                $filas = $sql->fetchAll(PDO::FETCH_ASSOC);
+                if ($filas == null)
+                    {
+                        $sql = $bdd->prepare("INSERT INTO usuarios (nombre, password, user) VALUES (?, ?, ?)"); //las interrogaciones son los parametros
+                        $sql->bindParam(1, $user); //los parámetros se asignan por orden (hay otra forma pero me parece más simple esta)
+                        $sql->bindParam(2, $password);
+                        $sql->bindParam(3, $alias);
+                        $sql->execute();
+                        header("Location: index.php");
+                    }
+                else
+                    {
+                        $nouser = "Usuario ya existente";
+                        $nopass = "";
+                        $noalias = "";
+                    }
+                
+                
+                
             }      
     }
 

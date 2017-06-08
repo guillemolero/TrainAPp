@@ -29,7 +29,7 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
         $repeticiones = $_POST['repeticiones'];
         $series = $_POST['series'];
 
-	$sql = "UPDATE historial SET peso = '$peso', repeticiones = '$repeticiones', series = '$series' WHERE id = $id ";
+	$sql = "UPDATE historial SET peso = '$peso', repeticiones = '$repeticiones', series = '$series', color='$color' WHERE id = $id ";
 
 	
 	$query = $bdd->prepare( $sql );

@@ -13,6 +13,12 @@
 	<script src='calendar/js/moment.min.js'></script>
 	<script src='calendar/js/fullcalendar.min.js'></script>
         <script src='calendar/locale/es.js'></script>
+        <script type="text/javascript">
+            function checkForm(form){
+                form.addGuardar.disabled=true;
+                return true;
+            }
+        </script>
 	<script>
 
 	$(document).ready(function() {

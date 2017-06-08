@@ -7,7 +7,6 @@ session_start();
 $user = $_SESSION['user'];
 
 $bdd = connectDB();
-//echo $_POST['title'];
 if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color']) && isset($user)){
 	
 	$title = $_POST['title'];

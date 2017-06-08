@@ -849,8 +849,8 @@
 		}
 
 		#bg {
-			background-size: 750px auto;
-			width: 2250px;
+			background-size: 1152px auto;
+                        width: 2250px;
 		} }
 
 /* Mobile */
@@ -935,8 +935,8 @@
 		}
 
 		#bg {
-			background-size: 300px auto;
-			width: 900px;
+			background-size: 1016px auto;
+                        width: 7000px;
 		}
 
 	/* Header */
@@ -965,7 +965,6 @@
 
 	@media screen and (max-width: 480px) {
 
-		/* BG */
 
 			@-moz-keyframes bg {
 				0% {
@@ -1033,8 +1032,8 @@
 		}
 
 		#bg {
-			background-size: 412.5px auto;
-			width: 1237.5px;
+			background-size: 1016px auto;
+                        width: 1237.5px;
 		}
 
 	/* Header */
@@ -1042,3 +1041,4 @@
 		#header nav {
 			padding: 0 1em;
 		} }
+        

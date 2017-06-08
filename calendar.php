@@ -5,6 +5,7 @@ session_start();
 if(isset($_SESSION['user'])){
     $user = $_SESSION['user'];
     $nombre = $_SESSION['nombre'];
+    
 } else {
     header('Location: index.php');
 }

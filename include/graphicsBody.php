@@ -11,8 +11,10 @@
 
                                     <div class="container">
                                         <center>
+                                            <div  style="overflow-y: scroll; max-height: 500px; width: 118%; padding-right: 18%">
                                             <div id="graficos">
                                                 <?php include 'include/graphicsContent.php'; ?>
+                                            </div>
                                             </div>
                                         </center>
                                     </div>

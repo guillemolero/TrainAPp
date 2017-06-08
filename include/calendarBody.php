@@ -12,8 +12,10 @@
 
                                     <div class="container">
                                         <center>
+                                            <div  style="overflow-y: scroll; max-height: 500px; width: 118%; padding-right: 18%">
                                             <div id="calendar">
 
+                                            </div>
                                             </div>
                                         </center>
                                     </div>
