@@ -55,7 +55,7 @@ if (isset($_POST['login']))
                     {
                         $sql = $bdd->prepare("INSERT INTO usuarios (nombre, password, user) VALUES (?, ?, ?)"); //las interrogaciones son los parametros
                         $sql->bindParam(1, $user); //los parámetros se asignan por orden (hay otra forma pero me parece más simple esta)
-                        $sql->bindParam(2, $password);
+                        $sql->bindParam(2, md5($password));
                         $sql->bindParam(3, $alias);
                         $sql->execute();
                         header("Location: index.php");
