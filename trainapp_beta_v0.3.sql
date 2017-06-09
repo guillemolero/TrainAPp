@@ -111,7 +111,7 @@ INSERT INTO `historial` (`id`, `user`, `title`, `color`, `start`, `end`, `peso`,
 
 CREATE TABLE `usuarios` (
   `ID` int(11) NOT NULL,
-  `NOMBRE` varchar(32) NOT NULL,
+  `NOMBRE` varchar(20) NOT NULL,
   `USER` varchar(16) NOT NULL,
   `PASSWORD` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;

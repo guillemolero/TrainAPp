@@ -1,0 +1,10 @@
+	    FTP
+SERVIDOR: 	ftp.trainapp.tk
+USUARIO: 	u825469985
+PASSWORD: 	trainapp123.
+
+	BASE DE DATOS
+HOST: 		mysql.hostinger.es
+DB: 		u825469985_train
+USUARIO: 	u825469985_admin
+PASSWORD: 	trainapp123.
