@@ -47,6 +47,7 @@ if (isset($_POST['login']))
                             
                             $_SESSION['user'] = $user;
                             $_SESSION['nombre'] = $filas[0]['nombre'];
+                            header("Location: calendar.php");
 
                         } else {
                             $nouser = "";
