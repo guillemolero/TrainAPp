@@ -13,18 +13,11 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$color = $_POST['color'];
-        
-        
-        $sql = "SELECT TIPO FROM ejercicios WHERE NOMBRE='$title'";
-        
-        $req = $bdd->prepare($sql);
-        $req->execute();
+        $peso = $_POST['peso'];
+        $repeticiones = $_POST['repeticiones'];
+        $series = $_POST['series'];
 
-        $result = $req->fetchColumn();
-        
-        $tipo = $result;
-
-	$sql = "INSERT INTO historial(title, start, end, color, user) values ('$title', '$start', '$end', '$color', '$user')";
+	$sql = "INSERT INTO historial(title, start, end, color, user, peso, repeticiones, series) values ('$title', '$start', '$end', '$color', '$user', '$peso', '$repeticiones', '$series')";
 	
 	$query = $bdd->prepare( $sql );
 	if ($query == false) {

@@ -25,19 +25,19 @@ function loadHistorial($user, $title, $rango){
 
                         for ($i = 0; $i < count($meses); $i++) 
                                 {
-                                    if ($selected_val2 == $meses[$i])
+                                    if ($rango == $meses[$i])
                                         {
-                                            if ($selected_val2 == 'Octubre' || $selected_val2 == 'Noviembre' || $selected_val2 == 'Diciembre')
+                                            if ($rango == 'Octubre' || $rango == 'Noviembre' || $rango == 'Diciembre')
                                                 {
                                                     $mesSql = $i +1;
-                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user' AND title = '$title'"
                                                     . "AND substring(start, 6, 2) = '$mesSql'";
                                                 }
                                             else
                                                 {
                                             
                                                     $mesSql = $i +1; 
-                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user' AND title = '$title'"
                                                     . "AND substring(start, 7, 1) = '$mesSql'";
                                                 }
                                         }
@@ -68,19 +68,19 @@ function loadHistorial($user, $title, $rango){
 
                         for ($i = 0; $i < count($meses); $i++) 
                                 {
-                                    if ($selected_val2 == $meses[$i])
+                                    if ($rango == $meses[$i])
                                         {
-                                            if ($selected_val2 == 'Octubre' || $selected_val2 == 'Noviembre' || $selected_val2 == 'Diciembre')
+                                            if ($rango == 'Octubre' || $rango == 'Noviembre' || $rango == 'Diciembre')
                                                 {
                                                     $mesSql = $i +1;
-                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user' AND title = '$title'"
                                                     . "AND substring(start, 6, 2) = '$mesSql'";
                                                 }
                                             else
                                                 {
                                             
                                                     $mesSql = $i +1; 
-                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user' AND title = '$title'"
                                                     . "AND substring(start, 7, 1) = '$mesSql'";
                                                 }
                                         }

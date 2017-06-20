@@ -54,6 +54,24 @@
                           <input type="text" name="end" class="form-control" id="end" readonly>
                         </div>
                   </div>
+                  <div class="form-group">
+                        <label for="start" class="col-sm-2 control-label">Peso</label>
+                        <div class="col-sm-10">
+                          <input type="number" name="peso" step="0.5" min="0" max="100" class="form-control" placeholder="Peso">
+                        </div>
+                  </div>
+                  <div class="form-group">
+                        <label for="start" class="col-sm-2 control-label">Repeticiones</label>
+                        <div class="col-sm-10">
+                          <input type="number" name="repeticiones" min="0" max="1000" class="form-control" placeholder="Repeticiones">
+                        </div>
+                  </div>
+                  <div class="form-group">
+                        <label for="start" class="col-sm-2 control-label">Series</label>
+                        <div class="col-sm-10">
+                          <input type="number" name="series" min="0" max="50" class="form-control" placeholder="Series">
+                        </div>
+                  </div>
           </div>
           <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
