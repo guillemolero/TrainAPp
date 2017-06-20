@@ -23,13 +23,6 @@
                                                     </center>
                                                 </div>
 					</header>
-                               
-
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
-
 			</div>
 		</div>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->

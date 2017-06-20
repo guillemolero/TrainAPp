@@ -25,10 +25,6 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
         $tipo = $result;
 
 	$sql = "INSERT INTO historial(title, start, end, color, user) values ('$title', '$start', '$end', '$color', '$user')";
-	//$req = $bdd->prepare($sql);
-	//$req->execute();
-	
-	echo $sql;
 	
 	$query = $bdd->prepare( $sql );
 	if ($query == false) {

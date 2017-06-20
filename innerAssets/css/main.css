@@ -171,7 +171,8 @@
 		top: 0;
 		width: 100%;
 	}
-
+       
+        
 /* BG */
 
 	#bg {
@@ -191,7 +192,7 @@
 
 		background: #348cb2 url("images/GYM_2.png") bottom left;
 		background-repeat: repeat-x;
-		height: 100%;
+		height: 145%;
 		left: 0;
 		opacity: 1;
 		position: fixed;
@@ -517,6 +518,7 @@
 	}
 
 		#header h1 {
+                        margin-top: 2.5%;
 			font-size: 4.35em;
 			font-weight: 900;
 			letter-spacing: -0.035em;
@@ -772,6 +774,21 @@
 		} }
 
 /* Normal */
+        
+@media screen and (max-width: 1366px){
+    #calendarContainer {
+        overflow-y: scroll; 
+        max-height: 500px;
+        width: 120%;
+        padding-right:18%;
+    }
+    #graphicsContainer {
+        overflow-y: scroll;
+        max-height: 500px; 
+        width: 121%; 
+        padding-right: 18%;
+    }
+}
 
 	@media screen and (max-width: 1280px) {
 
@@ -849,8 +866,9 @@
 		}
 
 		#bg {
-			background-size: 1152px auto;
-                        width: 2250px;
+			background-size: 1500px auto;
+                        width: 5000px;
+
 		} }
 
 /* Mobile */
@@ -935,7 +953,7 @@
 		}
 
 		#bg {
-			background-size: 1016px auto;
+			background-size: 1500px auto;
                         width: 7000px;
 		}
 
@@ -943,6 +961,7 @@
 
 		#header h1 {
 			font-size: 2.5em;
+                        margin-top: 3%;
 		}
 
 		#header p {
@@ -1032,8 +1051,8 @@
 		}
 
 		#bg {
-			background-size: 1016px auto;
-                        width: 1237.5px;
+			background-size: 1500px auto;
+                        width: 5000px;
 		}
 
 	/* Header */

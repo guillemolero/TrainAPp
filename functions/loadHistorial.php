@@ -24,15 +24,24 @@ function loadHistorial($user, $title, $rango){
                             'Agosto', 'Semptiembre', 'Octubre', 'Noviembre', 'Diciembre']; 
 
                         for ($i = 0; $i < count($meses); $i++) 
-                            {
-                                if ($rango == $meses[$i]) 
-                                    {
-                                        $mesSql = $i +1; 
-                                        $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user'"
-                                        . "AND substring(start, 7, 1) = '$mesSql'";
-
-                                    }
-                            }
+                                {
+                                    if ($selected_val2 == $meses[$i])
+                                        {
+                                            if ($selected_val2 == 'Octubre' || $selected_val2 == 'Noviembre' || $selected_val2 == 'Diciembre')
+                                                {
+                                                    $mesSql = $i +1;
+                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    . "AND substring(start, 6, 2) = '$mesSql'";
+                                                }
+                                            else
+                                                {
+                                            
+                                                    $mesSql = $i +1; 
+                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    . "AND substring(start, 7, 1) = '$mesSql'";
+                                                }
+                                        }
+                                }
                     }
                 else
                     {
@@ -58,19 +67,28 @@ function loadHistorial($user, $title, $rango){
                             'Agosto', 'Semptiembre', 'Octubre', 'Noviembre', 'Diciembre']; 
 
                         for ($i = 0; $i < count($meses); $i++) 
-                            {
-                                if ($rango == $meses[$i]) 
-                                    {
-                                        $mesSql = $i +1; 
-                                        $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user', title = '$title'"
-                                        . "AND substring(start, 7, 1) = '$mesSql'";
-
-                                    }
-                            }
+                                {
+                                    if ($selected_val2 == $meses[$i])
+                                        {
+                                            if ($selected_val2 == 'Octubre' || $selected_val2 == 'Noviembre' || $selected_val2 == 'Diciembre')
+                                                {
+                                                    $mesSql = $i +1;
+                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    . "AND substring(start, 6, 2) = '$mesSql'";
+                                                }
+                                            else
+                                                {
+                                            
+                                                    $mesSql = $i +1; 
+                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    . "AND substring(start, 7, 1) = '$mesSql'";
+                                                }
+                                        }
+                                }
                     }
                 else
                     {
-                        $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user', title = '$title'"
+                        $sql = "SELECT title, start, peso, repeticiones, series FROM historial WHERE user='$user' AND title = '$title' "
                                 . "AND substring(start, 1, 4) = '$rango'";
                     }
             }

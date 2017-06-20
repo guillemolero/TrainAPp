@@ -12,7 +12,7 @@
 
                                     <div class="container">
                                         <center>
-                                            <div  style="overflow-y: scroll; max-height: 500px; width: 118%; padding-right: 18%">
+                                            <div id="calendarContainer">
                                             <div id="calendar">
 
                                             </div>
@@ -20,12 +20,6 @@
                                         </center>
                                     </div>
                             </header>
-
-
-                    <!-- Footer -->
-                            <footer id="footer">
-                                    <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-                            </footer>
 
             </div>
     </div>

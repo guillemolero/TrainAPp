@@ -1,6 +1,6 @@
 <?php
 
-// Connexion à la base de données
+// Connexion a la base de datos
 require_once('bdd.php');
 
 $bdd = connectDB();
@@ -29,7 +29,5 @@ if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Even
 	}
 
 }
-//header('Location: '.$_SERVER['HTTP_REFERER']);
-
 	
 ?>

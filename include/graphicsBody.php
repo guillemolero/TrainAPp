@@ -11,7 +11,7 @@
 
                                     <div class="container">
                                         <center>
-                                            <div  style="overflow-y: scroll; max-height: 500px; width: 118%; padding-right: 18%">
+                                            <div id="graphicsContainer" >
                                             <div id="graficos">
                                                 <?php include 'include/graphicsContent.php'; ?>
                                             </div>
@@ -19,13 +19,6 @@
                                         </center>
                                     </div>
                             </header>
-
-
-                    <!-- Footer -->
-                            <footer id="footer">
-                                    <span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-                            </footer>
-
             </div>
     </div>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->

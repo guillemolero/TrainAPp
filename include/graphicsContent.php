@@ -154,16 +154,23 @@
                             $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 
                                 'Agosto', 'Semptiembre', 'Octubre', 'Noviembre', 'Diciembre']; 
 
-                            for ($i = 0; $i < count($meses); $i++) //bucle de 12 vueltas
+                            for ($i = 0; $i < count($meses); $i++) 
                                 {
-                                    if ($selected_val2 == $meses[$i]) //comparo $selected_val2 con mi array, si es que sí entra en el if
+                                    if ($selected_val2 == $meses[$i])
                                         {
-                                            $mesSql = $i +1; //el mes con el que haré la consulta es igual a la posición del array +1 porque
-                                                             // el array empieza en 0 pero el primer mes del datetime es 1, así se iguala
-                                            $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
-                                            . "AND substring(start, 7, 1) = '$mesSql'";
-                                            //substring(nombrecampodelatabla, posicionenlaqueestáelcaracterquequiero, cuantoscaracterescojo)
-                                            //si miras el datetime, la septima posicion es donde está el mes, solo cojo un valor porque con ese numero me vale
+                                            if ($selected_val2 == 'Octubre' || $selected_val2 == 'Noviembre' || $selected_val2 == 'Diciembre')
+                                                {
+                                                    $mesSql = $i +1;
+                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    . "AND substring(start, 6, 2) = '$mesSql'";
+                                                }
+                                            else
+                                                {
+                                            
+                                                    $mesSql = $i +1; 
+                                                    $sql3 = "SELECT peso FROM historial WHERE user='$user' AND title = '$selected_val'"
+                                                    . "AND substring(start, 7, 1) = '$mesSql'";
+                                                }
                                         }
                                 }
                         }
