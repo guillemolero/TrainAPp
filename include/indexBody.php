@@ -21,7 +21,7 @@
 							<h2>La nueva revolución en las apps de deporte.
 							<br />
 							</h2>
-                                                        <p>Dos desarroladores web han llevado a cabo esta herramienta para
+                                                        <p>Dos desarrolladores web han llevado a cabo esta herramienta para
                                                         facilitar el seguimiento de tus rutinas en el gimnasio. Con un uso
                                                         sencillo y orientativo, TrainApp puede convertirse en tu aliado para 
                                                         alcanzar metas cuando vayas a entrenar.</p>
