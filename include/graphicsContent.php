@@ -50,7 +50,7 @@
             <option disabled=""><br></option> <!--Esto es una mierda que me he inventado para que hubiera un espacio en blanco entre los años y el 'desde siempre'-->
             <option>Desde siempre</option> <!--Esto ya para que lo saque tal cual sin filtro de tiempo-->
         </select>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Mostrar</button>
         </form>
         <div id ="npeso">
             Peso levantado en kgs
@@ -120,7 +120,7 @@
             <option disabled=""><br></option>
             <option>Desde siempre</option>
         </select>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Mostrar</button>
         </form>
         <div id ="npeso">
             Peso levantado en kgs
