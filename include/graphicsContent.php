@@ -187,7 +187,7 @@
             while($registro3 = $resultado3->fetch())
                 {
                     $i++;
-                    $valor = $registro3['peso']*0.28;
+                    $valor = $registro3['peso']*0.22;
                     echo '<div class="bar blue" style="height: '.$valor.'em"></div>';
                 }
         ?>

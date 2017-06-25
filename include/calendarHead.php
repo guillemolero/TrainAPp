@@ -9,6 +9,9 @@
     <!-- FullCalendar -->
     <link href='calendar/css/fullcalendar.css' rel='stylesheet' />
     <!-- Custom CSS -->
+    <link rel="icon" 
+      type="image/png" 
+      href="assets/favicon.png" />
     <style>
         body {
             padding-top: 70px;

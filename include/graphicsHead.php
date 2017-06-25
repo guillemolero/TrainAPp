@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="innerAssets/css/main.css" />
     <link rel="stylesheet" href="innerAssets/css/graficos.css">
     <link rel="javascript" href="js/bootstrap.min.js">
+    <link rel="icon" 
+      type="image/png" 
+      href="assets/favicon.png" />
     <style>
         body {
             padding-top: 70px;
